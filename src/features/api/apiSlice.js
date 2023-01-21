@@ -24,9 +24,20 @@ export const apiSlice = createApi({
         const queryString = `/videos?${likes.join('&')}&_limit=4`;
         return queryString;
       }
+    }),
+    addVideo: builder.mutation({
+      query: (data) => ({
+        url: '/videos',
+        method: 'POST',
+        body: data
+      })
     })
   })
 });
 
-export const { useGetVideosQuery, useGetVideoQuery, useGetRelatedVidoesQuery } =
-  apiSlice;
+export const {
+  useGetVideosQuery,
+  useGetVideoQuery,
+  useGetRelatedVidoesQuery,
+  useAddVideoMutation
+} = apiSlice;

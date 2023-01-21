@@ -7,9 +7,8 @@ import TextArea from '../ui/TextArea';
 import TextInput from '../ui/TextInput';
 
 export default function Form() {
-  const [addVideo, { data: video, isLoading, isSuccess, isError, error }] =
+  const [addVideo, { isLoading, isSuccess, isError, error }] =
     useAddVideoMutation();
-  console.log('Form  video', video);
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
